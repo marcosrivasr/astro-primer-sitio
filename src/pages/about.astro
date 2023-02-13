@@ -1,0 +1,26 @@
+---
+import Mensaje from "../components/Mensaje.astro";
+
+let count = 0;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>astro: About</title>
+  </head>
+  <body>
+    <h1>About</h1>
+    <Mensaje nombre="Marcos" />
+    <button id="boton">Dame click {count}</button>
+    <script>
+      document.getElementById("boton").addEventListener("click", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
