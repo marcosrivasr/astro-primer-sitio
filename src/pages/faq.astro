@@ -1,0 +1,22 @@
+---
+import LayoutPost from "../layouts/LayoutPost.astro";
+import faqs from "../data/faqsData";
+import Title from "../components/Title.astro";
+import FaqItem from "../components/FaqItem.astro";
+---
+
+<LayoutPost title="FAQ">
+  <section>
+    <Title title="Preguntas Frecuentes" />
+
+    {faqs.map((f) => <FaqItem item={f} />)}
+  </section>
+</LayoutPost>
+
+<style>
+  section {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

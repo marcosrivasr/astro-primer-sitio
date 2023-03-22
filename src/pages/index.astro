@@ -1,19 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection, getEntryBySlug } from "astro:content";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SiteContent from "../components/SiteContent.astro";
-import Counter from "../components/Counter.jsx";
-
-const allBlogPosts = await getCollection("newsletter");
-const oneBlogPost = await getEntryBySlug("newsletter", "week-1");
-const { Content } = await oneBlogPost.render();
 ---
 
 <Layout title="Home">
   <Header />
-  <Counter client:load />
   <SiteContent />
   <Footer />
 </Layout>

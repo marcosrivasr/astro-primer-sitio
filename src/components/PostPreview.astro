@@ -1,0 +1,37 @@
+---
+import Separator from "./Separator.astro";
+
+const { post } = Astro.props;
+---
+
+<div>
+  <a href={post.url}>
+    <img src={post.frontmatter.image.url} alt="" />
+    <div class="title">
+      {post.frontmatter.title}
+    </div>
+    <div class="description">
+      {post.frontmatter.description}
+    </div>
+  </a>
+  <Separator />
+</div>
+
+<style>
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  a .description {
+    padding: 10px;
+    color: white;
+  }
+
+  a .title {
+    font-size: 32px;
+  }
+  img {
+    width: 100%;
+  }
+</style>

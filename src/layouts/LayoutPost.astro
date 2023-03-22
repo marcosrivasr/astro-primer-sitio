@@ -17,13 +17,13 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
   </head>
   <body>
     <MenuItemContainerView>
@@ -33,7 +33,12 @@ const { title } = Astro.props;
         ))
       }
     </MenuItemContainerView>
-    <slot />
+    <div class="container">
+      <div class="logo">
+        <img src="/assets/hero-logo.webp" width="400" alt="" />
+      </div>
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
@@ -47,16 +52,41 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Crimson Text", serif;
     background-color: #000;
   }
   body {
     font-family: "Crimson Text", serif;
-    font-size: 18px;
+    background-image: url(../../assets/bg.webp);
     margin: 0;
+    min-height: 100vh;
+    color: white;
+    font-size: 18px;
+  }
+  .container a {
+    color: rgb(255, 179, 0);
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  .container {
+    margin-top: 120px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .logo {
+    text-align: center;
+    position: relative;
+    top: -100px;
+    margin-bottom: -50px;
+  }
+
+  p img {
+    width: 100%;
   }
 </style>

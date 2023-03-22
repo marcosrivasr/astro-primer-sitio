@@ -1,34 +1,7 @@
 ---
-import type { MenuItem } from "../types/types";
-import MenuItemContainerView from "./MenuItemContainerView.astro";
-import MenuItemView from "./MenuItemView.astro";
-const menuItems: MenuItem[] = [
-  {
-    title: "Media",
-    url: "",
-    icon: "",
-  },
-  {
-    title: "FAQ",
-    url: "",
-    icon: "",
-  },
-  {
-    title: "Blog",
-    url: "",
-    icon: "",
-  },
-];
 ---
 
 <section>
-  <MenuItemContainerView>
-    {
-      menuItems.map(({ icon, title, url }) => (
-        <MenuItemView icon={icon} title={title} url={url} />
-      ))
-    }
-  </MenuItemContainerView>
   <video src="/assets/hero.mp4" autoplay loop></video>
   <div class="logo"><img src="/assets/hero-logo.webp" alt="" /></div>
 </section>

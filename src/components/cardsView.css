@@ -1,0 +1,34 @@
+.cardsView {
+  --cardWidth: 390px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  width: calc((var(--cardWidth) + 40px) * 3);
+}
+
+.card {
+  min-width: var(--cardWidth);
+  width: var(--cardWidth);
+  min-height: 510px;
+}
+
+.card .image {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: calc(100% - 20px) calc(100% - 30px);
+}
+
+.card .image img {
+  width: 100%;
+}
+
+.card .title {
+  padding: 10px 0;
+  height: 95px;
+  font-size: 28px;
+  text-align: center;
+}
+.card .description {
+  text-align: center;
+}

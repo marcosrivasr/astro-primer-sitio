@@ -1,0 +1,24 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="titleContainer">
+  <div>
+    <img src="/assets/title-decoration.webp" alt="" />
+  </div>
+  <h2>{title}</h2>
+  <div>
+    <img src="/assets/title-decoration-bottom.webp" alt="" />
+  </div>
+</div>
+
+<style>
+  img {
+    width: 300px;
+  }
+  .titleContainer {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
